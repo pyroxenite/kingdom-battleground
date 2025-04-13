@@ -1,0 +1,55 @@
+{
+  "id": "kingdom-battleground",
+  "title": "Kingdom Battleground",
+  "description": "The Kingdom Battleground system for FoundryVTT!",
+  "authors": [
+    {
+      "name": "Pharoah Jardin",
+      "discord": ""
+    },
+    {
+      "name": "Alexis Sanzey",
+      "discord": ""
+    }
+  ],
+  "url": "<Replace this with a link to your public repository>",
+  "license": "LICENSE.txt",
+  "readme": "README.md",
+  "bugs": "ISSUES.md",
+  "changelog": "CHANGELOG.md",
+  "media": [
+    {
+      "type": "setup",
+      "url": "systems/kingdom-battleground/assets/anvil-impact.png",
+      "thumbnail": "systems/kingdom-battleground/assets/anvil-impact.png"
+    }
+  ],
+  "version": "0.0.1",
+  "compatibility": {
+    "minimum": 12,
+    "verified": "12"
+  },
+  "esmodules": [
+    "module/kingdom-battleground.mjs"
+  ],
+  "styles": [
+    "css/kingdom-battleground.css"
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "packs": [],
+  "packFolders": [],
+  "socket": false,
+  "manifest": "Replace this with a link to the /latest release system.json so people can receive updates after they've installed the system",
+  "download": "This must link to a .zip file of the current version",
+  "background": "systems/kingdom-battleground/assets/anvil-impact.png",
+  "gridDistance": 5,
+  "gridUnits": "ft",
+  "primaryTokenAttribute": "health",
+  "secondaryTokenAttribute": "power"
+}
