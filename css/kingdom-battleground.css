@@ -1,3 +1,52 @@
+.kingdom-battleground.sheet.actor .window-content {
+  background-image: url("../assets/sheet-background.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.kingdom-battleground.sheet.actor .window-content input[data-dtype="Number"] {
+  background-color: white;
+  border: 3px solid black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 /* Global styles */
 .window-app {

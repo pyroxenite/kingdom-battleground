@@ -69,6 +69,82 @@ Handlebars.registerHelper('toLowerCase', function (str) {
 Hooks.once('ready', function () {
   // Wait to register hotbar drop hook on ready so that modules could register earlier if they want to
   Hooks.on('hotbarDrop', (bar, data, slot) => createItemMacro(data, slot));
+
+  console.log("Kingdom Battleground Loaded")
+  ui.notifications.info("Kingdom Battleground Loaded");
+
+  CONFIG.statusEffects = [
+    {
+      id: "marche",
+      name: "Marche",
+      img: "systems/kingdom-battleground/assets/icons/marche.svg",
+      flags: { core: { statuses: new Set(["marche"]) } }
+    },
+    {
+      id: "combat",
+      name: "Combat",
+      img: "systems/kingdom-battleground/assets/icons/combat.svg",
+      flags: { core: { statuses: new Set(["combat"]) } }
+    },
+    {
+      id: "charge",
+      name: "Charge",
+      img: "systems/kingdom-battleground/assets/icons/charge.svg",
+      flags: { core: { statuses: new Set(["charge"]) } }
+    },
+    {
+      id: "percee",
+      name: "Percée",
+      img: "systems/kingdom-battleground/assets/icons/percee.svg",
+      flags: { core: { statuses: new Set(["percee"]) } }
+    },
+    {
+      id: "def_charge",
+      name: "Défense de charge",
+      img: "systems/kingdom-battleground/assets/icons/def_charge.svg",
+      flags: { core: { statuses: new Set(["def_charge"]) } }
+    },
+    {
+      id: "def_eparse",
+      name: "Défense éparse",
+      img: "systems/kingdom-battleground/assets/icons/def_eparse.svg",
+      flags: { core: { statuses: new Set(["def_eparse"]) } }
+    },
+    {
+      id: "repos",
+      name: "Repos",
+      img: "systems/kingdom-battleground/assets/icons/repos.svg",
+      flags: { core: { statuses: new Set(["repos"]) } }
+    },
+    {
+      id: "special",
+      name: "Special",
+      img: "systems/kingdom-battleground/assets/icons/special.svg",
+      flags: { core: { statuses: new Set(["special"]) } }
+    }
+  ];
+});
+
+Hooks.on("applyTokenStatusEffect", (token, statusId, active) => {
+  console.log("applyTokenStatusEffect!!")
+  console.log({token, statusId, active})
+  if (!active) return; // Si on retire un effet, ne rien faire
+
+  // Liste des IDs de tes statuts personnalisés
+  const statusIds = ["marche", "combat", "charge", "percee", "def_charge", "def_eparse", "repos", "special"];
+
+  // // Si l'effet qu'on applique est dans ta liste personnalisée
+  // if (statusIds.includes(effect.id)) {
+  //     const otherEffects = token.actor.effects.contents.filter(e => {
+  //         const statuses = e.getFlag("core", "statuses");
+  //         return statusId && statusId !== effect.id && statusIds.includes(statusId);
+  //     });
+
+  //     // Supprimer les autres statuts si présents
+  //     for (let e of otherEffects) {
+  //         await e.delete();
+  //     }
+  // }
 });
 
 /* -------------------------------------------- */
