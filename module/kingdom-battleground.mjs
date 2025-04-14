@@ -71,7 +71,7 @@ Hooks.once('ready', function () {
   Hooks.on('hotbarDrop', (bar, data, slot) => createItemMacro(data, slot));
 
   console.log("Kingdom Battleground Loaded")
-  ui.notifications.info("Kingdom Battleground Loaded");
+  // ui.notifications.info("Kingdom Battleground Loaded");
 
   CONFIG.statusEffects = [
     {

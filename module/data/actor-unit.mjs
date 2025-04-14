@@ -1,6 +1,6 @@
 import KingdomActorBase from "./base-actor.mjs";
 
-export default class KingdomNPC extends KingdomActorBase {
+export default class KingdomUnit extends KingdomActorBase {
 
   static defineSchema() {
     const fields = foundry.data.fields;
