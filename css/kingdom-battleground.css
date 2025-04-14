@@ -131,6 +131,17 @@
   /* padding: 6px; */
 }
 
+.kingdom-battleground.sheet.actor .window-content .stats-boxes {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.kingdom-battleground.sheet.actor .window-content .stats-boxes .abilities {
+  width: 50%;
+  box-sizing: border-box;
+} 
 
 
 

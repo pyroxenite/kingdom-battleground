@@ -27,7 +27,7 @@ Hooks.once('init', function () {
    * @type {String}
    */
   CONFIG.Combat.initiative = {
-    formula: '1d20 + @abilities.dex.mod',
+    formula: '@strategy - 1d20',
     decimals: 2,
   };
 
@@ -36,11 +36,12 @@ Hooks.once('init', function () {
 
   // Note that you don't need to declare a DataModel
   // for the base actor/item classes - they are included
-  // with the Character/NPC as part of super.defineSchema()
+  // with the General/Unit as part of super.defineSchema()
   CONFIG.Actor.dataModels = {
-    character: models.KingdomCharacter,
-    npc: models.KingdomNPC
+    general: models.KingdomGeneral,
+    unit: models.KingdomUnit
   }
+
 
   // Register sheet application classes
   Actors.unregisterSheet('core', ActorSheet);
@@ -123,7 +124,33 @@ Hooks.once('ready', function () {
       flags: { core: { statuses: new Set(["special"]) } }
     }
   ];
+  add_listen_socket()
 });
+
+function add_listen_socket() {
+  console.log("socket listenner on!!!!!")
+  game.socket.on('system.kingdom-battleground', (arg1, arg2, arg3) => {
+      console.log(arg1, arg2, arg3); // expected: "foo bar bat"
+  })
+}
+
+Hooks.on('chatMessage', () => {
+  console.log("socket talk!!!!!")
+  const targetUser = game.users.find(u => u.name === "Player 1");
+
+  if (!targetUser) {
+      ui.notifications.warn("Utilisateur non trouvé !");
+      return;
+  }
+
+  game.socket.emit("system.kingdom-battleground", {
+      userId: targetUser.name,
+      title: "Un message secret",
+      content: "<p>Voici une surprise pour toi !</p>"
+  })
+}
+)
+
 
 Hooks.on("applyTokenStatusEffect", (token, statusId, active) => {
   console.log("applyTokenStatusEffect!!")

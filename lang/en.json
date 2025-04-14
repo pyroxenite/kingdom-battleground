@@ -29,8 +29,8 @@
 
   "TYPES": {
     "Actor": {
-      "character": "Character",
-      "npc": "NPC"
+      "general": "Général",
+      "unit": "Unité"
     },
     "Item": {
       "item": "Item",
