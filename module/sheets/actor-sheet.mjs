@@ -72,6 +72,8 @@ export class KingdomActorSheet extends ActorSheet {
       this.actor.allApplicableEffects()
     );
 
+    context.game = game;
+
     return context;
   }
 

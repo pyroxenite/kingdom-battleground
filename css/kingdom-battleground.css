@@ -28,7 +28,7 @@
   font-size: 35px;
 }
 
-.kingdom-battleground.sheet.actor .window-content .sheet-header h1 input {
+.kingdom-battleground.sheet.actor .window-content .sheet-header :is(h1, h2) input {
   /* background: rgb(92, 92, 92); */
   color: white;
   /* border: 3px solid white; */
@@ -48,6 +48,13 @@
   /* font-family: "Caveat"; */
   /* text-transform: uppercase; */
 }
+
+.kingdom-battleground.sheet.actor .window-content .sheet-header h2 {
+  height: 50px;
+  flex-grow: 0;
+  font-size: 25px;
+}
+
 
 .kingdom-battleground.sheet.actor .window-content input[data-dtype="Number"] {
   /* background-color: white;

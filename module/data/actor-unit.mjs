@@ -12,10 +12,10 @@ export default class KingdomUnit extends KingdomActorBase {
       max: new fields.NumberField({ ...requiredInteger, initial: 5 })
     });
 
-    schema.unit_type = new fields.SchemaField({
-      value: new fields.StringField({initial: "Infanterie" }),
-      
+    schema.unitType = new fields.SchemaField({
+      value: new fields.StringField({ initial: "Infanterie" }),
     });
+
     return schema
   }
 

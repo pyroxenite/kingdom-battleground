@@ -1,6 +1,6 @@
 {
   "Actor": {
-    "types": ["general", "unit"]
+    "types": ["general", "unit", "commandant"]
   },
   "Item": {
     "types": ["item", "feature", "spell"]

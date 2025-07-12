@@ -2,12 +2,14 @@
 
   {{!-- Sheet Header --}}
   <header class="sheet-header">
-    <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100" />
+    <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" />
     {{!-- The grid classes are defined in scss/global/_grid.scss. To use,
     use both the "grid" and "grid-Ncol" class where "N" can be any number
     from 1 to 12 and will create that number of columns. --}}
     <div class="resources main-stats">
       <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="Name" /></h1>
+      <h2 class="unit-type"><input name="system.unitType.value" type="text" value="{{system.unitType.value}}"
+          placeholder="Enter Type" /></h2>
 
       {{!-- "flex-group-center" is also defined in the _grid.scss file
       and it will add a small amount of padding, a border, and will
@@ -83,14 +85,15 @@
             <input type="text" name="system.speed.value" value="{{system.speed.value}}" data-dtype="Number" />
           </div>
         </div>
-      </section>
-      <div class="abilities flexcol">
-          <div class="resource large-stat-box">
-            <label for="system.unit_type.value" class="resource-label">Type</label>
-            <input type="text" class="large-text-box" name="system.unit_type.value" value="{{system.unit_type.value}}" data-dtype="Text" />
-          </div>
-        </div>
 
+        <select name="system.owner">
+          {{#each game.users.contents as |u|}}
+            <option value="{{u.id}}" {{#if (eq u.id ../system.owner)}}selected{{/if}}>
+              {{u.name}}
+            </option>
+          {{/each}}
+        </select>
+      </section>
     </div>
 
     {{!-- Biography Tab --}}

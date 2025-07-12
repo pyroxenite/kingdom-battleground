@@ -30,6 +30,7 @@
   "TYPES": {
     "Actor": {
       "general": "Général",
+      "commandant": "Commandant",
       "unit": "Unité"
     },
     "Item": {
