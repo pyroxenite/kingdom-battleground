@@ -1,0 +1,558 @@
+@font-face {
+  /* text font */
+  font-family: 'Caveat';
+  src: url("../fonts/Caveat.ttf") format('truetype');
+}
+
+@font-face {
+  /* title font */
+  font-family: 'MedievalSharp';
+  src: url("../fonts/MedievalSharp.ttf") format('truetype');
+}
+
+.kingdom-battleground.sheet.actor .window-content {
+  background-image: url("../assets/sheet-background-dimmed.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  font-family: "MedievalSharp";
+}
+
+.kingdom-battleground.sheet.actor .window-content .sheet-header {
+  align-items: stretch;
+}
+
+.kingdom-battleground.sheet.actor .window-content .sheet-header h1 {
+  height: 50px;
+  flex-grow: 0;
+  font-size: 35px;
+}
+
+.kingdom-battleground.sheet.actor .window-content .sheet-header :is(h1, h2) input {
+  /* background: rgb(92, 92, 92); */
+  color: white;
+  /* border: 3px solid white; */
+  font-weight: bold;
+  text-shadow: 
+    0px 3px 10px rgba(0, 0, 0, 0.9), 
+    -2px -2px 0px rgba(0, 0, 0, 1),
+    -2px  2px 0px rgba(0, 0, 0, 1),
+     2px -2px 0px rgba(0, 0, 0, 1),
+     0px 2px 0px rgba(0, 0, 0, 1),
+     0px -2px 0px rgba(0, 0, 0, 1),
+     2px  2px 0px rgba(0, 0, 0, 1);
+  padding: 10px;
+  text-align: center;
+  border-radius: 10px;
+  border: none;
+  /* font-family: "Caveat"; */
+  /* text-transform: uppercase; */
+}
+
+.kingdom-battleground.sheet.actor .window-content .sheet-header h2 {
+  height: 50px;
+  flex-grow: 0;
+  font-size: 25px;
+}
+
+
+.kingdom-battleground.sheet.actor .window-content input[data-dtype="Number"] {
+  /* background-color: white;
+  border: 3px solid black; */
+  border: none;
+  background: none;
+}
+
+.kingdom-battleground.sheet.actor .window-content .profile-img {
+  height: 275px;
+  width: 275px;
+  border-radius: 10px;
+  border: 3px solid black;
+}
+
+.kingdom-battleground.sheet.actor .window-content .resource-label {
+
+}
+
+.kingdom-battleground.sheet.actor .window-content .main-stats {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-between;
+  min-width: 250px;
+}
+
+.kingdom-battleground.sheet.actor .window-content .large-stat-box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+
+  background-color: white;
+  /* border: 3px solid black; */
+  text-align: center;
+  font-size: 20px;
+
+  border-image: url("../assets/parchment-upsidedown.png");
+  border-image-slice: 20 100 81 100;
+  border-image-width: 10px 40px 30px 40px;
+  border-image-outset: 10px 40px 25px 40px;
+  border-image-repeat: stretch stretch;
+
+  margin-top: 0px; 
+  margin-bottom: 30px; 
+  margin-left: 50px; 
+  margin-right: 50px; 
+}
+.kingdom-battleground.sheet.actor .window-content .large-stat-box 
+
+.kingdom-battleground.sheet.actor .window-content .large-stat-box label {
+  flex-grow: 2;
+  text-align: left;
+  margin-left: 10px;
+}
+
+.kingdom-battleground.sheet.actor .window-content .large-stat-box .large-text-box {
+  display: flex;
+  flex-grow: 1;
+}
+
+
+.kingdom-battleground.sheet.actor .window-content .title-tabs {
+  /* background: rgb(92, 92, 92); */
+  color: white;
+  /* border: 3px solid white; */
+  font-weight: bold;
+  text-shadow: 
+    0px 3px 10px rgba(0, 0, 0, 0.9), 
+    -2px -2px 0px rgba(0, 0, 0, 1),
+    -2px  2px 0px rgba(0, 0, 0, 1),
+     2px -2px 0px rgba(0, 0, 0, 1),
+     2px  2px 0px rgba(0, 0, 0, 1);
+  padding: 10px;
+  text-align: center;
+  border-radius: 10px;
+  font-family: "MedievalSharp";
+  font-size: 20px;
+}
+
+.kingdom-battleground.sheet.actor .window-content .large-stat-box input {
+  width: 40px;
+}
+
+
+.kingdom-battleground.sheet.actor .window-content .large-stat-box span {
+  /* padding: 6px; */
+}
+
+.kingdom-battleground.sheet.actor .window-content .stats-boxes {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.kingdom-battleground.sheet.actor .window-content .stats-boxes .abilities {
+  width: 50%;
+  box-sizing: border-box;
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+/* Global styles */
+.window-app {
+  font-family: "Roboto", sans-serif;
+}
+
+.rollable:hover, .rollable:focus {
+  color: #000;
+  text-shadow: 0 0 10px red;
+  cursor: pointer;
+}
+
+.grid,
+.grid-2col {
+  display: grid;
+  grid-column: span 2/span 2;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin: 10px 0;
+  padding: 0;
+}
+
+.grid-3col {
+  grid-column: span 3/span 3;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.grid-4col {
+  grid-column: span 4/span 4;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.grid-5col {
+  grid-column: span 5/span 5;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.grid-6col {
+  grid-column: span 6/span 6;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.grid-7col {
+  grid-column: span 7/span 7;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+}
+
+.grid-8col {
+  grid-column: span 8/span 8;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+}
+
+.grid-9col {
+  grid-column: span 9/span 9;
+  grid-template-columns: repeat(9, minmax(0, 1fr));
+}
+
+.grid-10col {
+  grid-column: span 10/span 10;
+  grid-template-columns: repeat(10, minmax(0, 1fr));
+}
+
+.grid-11col {
+  grid-column: span 11/span 11;
+  grid-template-columns: repeat(11, minmax(0, 1fr));
+}
+
+.grid-12col {
+  grid-column: span 12/span 12;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+
+.grid-start-2 {
+  grid-column-start: 2;
+}
+
+.grid-start-3 {
+  grid-column-start: 3;
+}
+
+.grid-start-4 {
+  grid-column-start: 4;
+}
+
+.grid-start-5 {
+  grid-column-start: 5;
+}
+
+.grid-start-6 {
+  grid-column-start: 6;
+}
+
+.grid-start-7 {
+  grid-column-start: 7;
+}
+
+.grid-start-8 {
+  grid-column-start: 8;
+}
+
+.grid-start-9 {
+  grid-column-start: 9;
+}
+
+.grid-start-10 {
+  grid-column-start: 10;
+}
+
+.grid-start-11 {
+  grid-column-start: 11;
+}
+
+.grid-start-12 {
+  grid-column-start: 12;
+}
+
+.grid-span-2 {
+  grid-column-end: span 2;
+}
+
+.grid-span-3 {
+  grid-column-end: span 3;
+}
+
+.grid-span-4 {
+  grid-column-end: span 4;
+}
+
+.grid-span-5 {
+  grid-column-end: span 5;
+}
+
+.grid-span-6 {
+  grid-column-end: span 6;
+}
+
+.grid-span-7 {
+  grid-column-end: span 7;
+}
+
+.grid-span-8 {
+  grid-column-end: span 8;
+}
+
+.grid-span-9 {
+  grid-column-end: span 9;
+}
+
+.grid-span-10 {
+  grid-column-end: span 10;
+}
+
+.grid-span-11 {
+  grid-column-end: span 11;
+}
+
+.grid-span-12 {
+  grid-column-end: span 12;
+}
+
+.flex-group-center,
+.flex-group-left,
+.flex-group-right {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.flex-group-left {
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.flex-group-right {
+  justify-content: flex-end;
+  text-align: right;
+}
+
+.flexshrink {
+  flex: 0;
+}
+
+.flex-between {
+  justify-content: space-between;
+}
+
+.flexlarge {
+  flex: 2;
+}
+
+.align-left {
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.align-right {
+  justify-content: flex-end;
+  text-align: right;
+}
+
+.align-center {
+  justify-content: center;
+  text-align: center;
+}
+
+/* Styles limited to kingdom-battleground sheets */
+.kingdom-battleground .item-form {
+  font-family: "Roboto", sans-serif;
+}
+.kingdom-battleground .sheet-header {
+  flex: 0 auto;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+}
+.kingdom-battleground .sheet-header .profile-img {
+  flex: 0 0 100px;
+  height: 100px;
+  margin-right: 10px;
+}
+.kingdom-battleground .sheet-header .header-fields {
+  flex: 1;
+}
+.kingdom-battleground .sheet-header h1.charname {
+  height: 50px;
+  padding: 0px;
+  margin: 5px 0;
+  border-bottom: 0;
+}
+.kingdom-battleground .sheet-header h1.charname input {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+.kingdom-battleground .sheet-tabs {
+  flex: 0;
+}
+.kingdom-battleground .sheet-body,
+.kingdom-battleground .sheet-body .tab,
+.kingdom-battleground .sheet-body .tab .editor {
+  height: 100%;
+}
+.kingdom-battleground .tox .tox-editor-container {
+  background: #fff;
+}
+.kingdom-battleground .tox .tox-edit-area {
+  padding: 0 8px;
+}
+.kingdom-battleground .resource-label {
+  font-weight: bold;
+}
+.kingdom-battleground .items-header {
+  height: 28px;
+  margin: 2px 0;
+  padding: 0;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.05);
+  border: 2px groove #eeede0;
+  font-weight: bold;
+}
+.kingdom-battleground .items-header > * {
+  font-size: 14px;
+  text-align: center;
+}
+.kingdom-battleground .items-header .item-name {
+  font-weight: bold;
+  padding-left: 5px;
+  text-align: left;
+  display: flex;
+}
+.kingdom-battleground .items-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  color: #444;
+}
+.kingdom-battleground .items-list .item-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.kingdom-battleground .items-list .item-name {
+  flex: 2;
+  margin: 0;
+  overflow: hidden;
+  font-size: 13px;
+  text-align: left;
+  align-items: center;
+  display: flex;
+}
+.kingdom-battleground .items-list .item-name h3, .kingdom-battleground .items-list .item-name h4 {
+  margin: 0;
+  white-space: nowrap;
+  overflow-x: hidden;
+}
+.kingdom-battleground .items-list .item-controls {
+  display: flex;
+  flex: 0 0 100px;
+  justify-content: flex-end;
+}
+.kingdom-battleground .items-list .item-controls a {
+  font-size: 12px;
+  text-align: center;
+  margin: 0 6px;
+}
+.kingdom-battleground .items-list .item {
+  align-items: center;
+  padding: 0 2px;
+  border-bottom: 1px solid #c9c7b8;
+}
+.kingdom-battleground .items-list .item:last-child {
+  border-bottom: none;
+}
+.kingdom-battleground .items-list .item .item-name {
+  color: #191813;
+}
+.kingdom-battleground .items-list .item .item-name .item-image {
+  flex: 0 0 30px;
+  height: 30px;
+  background-size: 30px;
+  border: none;
+  margin-right: 5px;
+}
+.kingdom-battleground .items-list .item-prop {
+  text-align: center;
+  border-left: 1px solid #c9c7b8;
+  border-right: 1px solid #c9c7b8;
+  font-size: 12px;
+}
+.kingdom-battleground .items-list .items-header {
+  height: 28px;
+  margin: 2px 0;
+  padding: 0;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.05);
+  border: 2px groove #eeede0;
+  font-weight: bold;
+}
+.kingdom-battleground .items-list .items-header > * {
+  font-size: 12px;
+  text-align: center;
+}
+.kingdom-battleground .items-list .items-header .item-name {
+  padding-left: 5px;
+  text-align: left;
+}
+.kingdom-battleground .item-formula {
+  flex: 0 0 200px;
+  padding: 0 8px;
+}
+.kingdom-battleground .effects .item .effect-source,
+.kingdom-battleground .effects .item .effect-duration,
+.kingdom-battleground .effects .item .effect-controls {
+  text-align: center;
+  border-left: 1px solid #c9c7b8;
+  border-right: 1px solid #c9c7b8;
+  font-size: 12px;
+}
+.kingdom-battleground .effects .item .effect-controls {
+  border: none;
+}
